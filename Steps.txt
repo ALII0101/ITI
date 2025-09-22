@@ -1,0 +1,18 @@
+pip install virtualenv
+virtualenv venv/.venv (populars name )
+(name)\Scripts\activate
+pip install django 
+pip freeze + copy-pest in requierments file 
+django-admin startproject myproject(name-folder)
+
+#to run 
+cd myproject
+python manage.py runserver +follow link that appear + to go to (admin-dashboard) edit the url to add (/admin) to url 
+                    once enter to (dashboard in browser) editt (db.sqlite3) in (myproject-folder)
+                    that's mean once go to dashboard , i actually connect with (data-base)
+                    
+                    ctrl+c: to stop the server && return to your path (myproject)
+
+#to create-app
+check from you path cd Day17 + cd myproject
+python manage.py startapp myuser(app-name) 

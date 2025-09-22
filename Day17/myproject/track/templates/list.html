@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>All Tracks</h1>
+<table width="100%" border="1">
+
+    <tr>
+
+        <th>id</th>
+        <th>name</th>
+        <th>actions</th>
+
+    </tr>
+    {% for track in tracks %}
+    <tr>
+        <!-- <td>1</td>
+            <td>python</td>
+            <td><a href="">update</a> <a href="">delete</a> </td> -->
+
+
+        <td>{{track.0}}</td>
+        <td>{{track.1}}</td>
+        <td>
+            <a href="{% url 'update_track' track.0 %}">update</a>
+            <a href="{% url 'delete_track' track.0 %}">delete</a>
+        </td>
+
+    </tr>
+
+
+    {% endfor %}
+</table>
+{% endblock %}
+{% block title %}All Tracks{% endblock %}

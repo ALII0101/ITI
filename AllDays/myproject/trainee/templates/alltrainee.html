@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- {% block title %} All Trainees {% endblock %} -->
+
+{% block content %}
+
+<h1>All Trainees</h1>
+<table width="100%" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- <th>Age</th> -->
+        <!-- <th>Track</th> -->
+        <th>E-mail</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for train in trainee %}
+
+    <tr>
+        <!-- <td>1</td> -->
+        <td>{{ train.id }}</td>
+        <!-- <td>Ali</td> -->
+        <td> {{train.name}} </td>
+        <!-- <td>19</td> -->
+        <!-- <td>3</td> -->
+        <!-- <td>ali224101539@ksiu.edu.eg</td> -->
+        <td> {{train.email}} </td>
+
+        <!-- <td> <img src="{%static 'IMG/roses.jpg' %}" alt=" {{train.3}} "> </td> -->
+        <td> <img src="{{train.image.url}}" alt=" {{train.name}} " width="100px" height="100px"> </td>
+
+        <td>
+            <a href="{% url 'update_trainee' train.id %}">update trainee</a>
+            <a href="{% url 'delete_trainee' train.id %}">delete trainee</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

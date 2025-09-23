@@ -6,6 +6,8 @@ pip freeze + copy-pest in requierments file
 django-admin startproject myproject(name-folder)
 
 #to run 
+cd AllDays
+.venv\Scripts\activate
 cd myproject
 python manage.py runserver +follow link that appear + to go to (admin-dashboard) edit the url to add (/admin) to url 
                     once enter to (dashboard in browser) editt (db.sqlite3) in (myproject-folder)
@@ -16,3 +18,35 @@ python manage.py runserver +follow link that appear + to go to (admin-dashboard)
 #to create-app
 check from you path cd Day17 + cd myproject
 python manage.py startapp myuser(app-name) 
+
+#to connect-with-database
+model-> that deal with database
+table(in database)=class(in model)
+coloumn to table=properites(class-variables) to class
+row             =obj
+
+python -m pip install psycopg2 (module ->deal with change (classes,properites,obj) to (tables,coloumns,rows) in (data base) )
+
+ORM->is medle wear (deal with out write queries)
+                    mean automatic make queries
+                    checkof migrations -> make his queries in pageadmin (autommatic)
+
+#update from module(mean show in data base)
+python manage.py makemigrations (automatic:make this folder in only app who updated(changed:mean write ) his module)
+                                write it everytime edit (change-things) in models
+                                save everyedit that you do in models
+                                --> choose (1) && 'python' if add null=false in attribute variable in class
+
+python manage.py migrate (read migrations file && send to database)
+
+python manage.py shell(to deal with class )
+                        from track.models import Track
+                        obj=Track() (obj-> obj from class (Track) instead of write (Track) everytimr)
+                                    mean Track.name='Jave'
+                        obj.name='Java' -->row-name
+                        obj.save() ---> to save && show in data base
+                        Track.objects.all() --> return all (rows) in database as obj
+                        Track.objects.filter(id=1).update(name='PHP') --> to update row-name that his id =1 
+
+
+                        # pip install pillow -->to deal with image 

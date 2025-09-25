@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Insert Trainee {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/insert.css' %}">
+
+<h1>Update Trainee</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="trname">
+        Name:
+    </label>
+    <input type="text" id="trname" name="trname" required value="{{trainee.name}}">
+    <br><br>
+    <label for="tremail">
+        Email:</label>
+    <input type="email" id="tremail" name="tremail" required value="{{trainee.email}}">
+<br><br>
+<select name="trtrack" id="trtrack">
+    <option value="">--- اختر المسار ---</option>
+    {% for track in tracks %}
+    {% if track.id == trainee.track.id %}
+        <option value="{{ track.id }}" selected>{{ track.name }}</option>
+    {% else %}
+    <option value="{{ track.id }}" >{{ track.name }}</option>
+    {% endif %}
+    {% endfor %}
+</select>
+    <br><br>
+    {% if trainee.image %}
+    <label for="">Current Image:</label><br>
+    <br>
+    <img src=" {{ trainee.image.url }} " alt=" {{trainee.name}} "
+        style="border:2px solid red; padding: 5px;width: 100px;">
+    {% endif %}
+
+    <br><br>
+
+    <label for="trphoto">upload image</label>
+    <input type="file" id="trphoto" name="trphoto">
+
+    <br><br>
+    <button>sumbit</button>
+</form>
+{% endblock %}

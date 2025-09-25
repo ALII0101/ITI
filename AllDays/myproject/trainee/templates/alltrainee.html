@@ -6,6 +6,9 @@
 {% block content %}
 
 <h1>All Trainees</h1>
+
+<a href="{% url 'insert_trainee' %}">Insert new Trainee</a>
+
 <table width="100%" border="1">
     <tr>
         <th>ID</th>
@@ -13,7 +16,9 @@
         <!-- <th>Age</th> -->
         <!-- <th>Track</th> -->
         <th>E-mail</th>
+        <th>Track</th>
         <th>Image</th>
+        <th>Status</th>
         <th>Actions</th>
     </tr>
 
@@ -28,9 +33,19 @@
         <!-- <td>3</td> -->
         <!-- <td>ali224101539@ksiu.edu.eg</td> -->
         <td> {{train.email}} </td>
+        <td> {{train.track.name}} </td>
 
         <!-- <td> <img src="{%static 'IMG/roses.jpg' %}" alt=" {{train.3}} "> </td> -->
-        <td> <img src="{{train.image.url}}" alt=" {{train.name}} " width="100px" height="100px"> </td>
+        <td>
+            {% if train.image %}
+            <img src="{{train.image.url}}" alt=" {{train.name}} " width="100px" height="100px">
+            {% else %}
+            No Image
+            {% endif %}
+
+        </td>
+
+<td>{% if train.status %} active {% else %} inactive {% endif %}</td>
 
         <td>
             <a href="{% url 'update_trainee' train.id %}">update trainee</a>

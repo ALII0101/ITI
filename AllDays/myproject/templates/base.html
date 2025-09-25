@@ -15,8 +15,13 @@
 
 <body>
 
-    <h1>Header</h1>
-
+    <!-- <h1>Header</h1> -->
+    <span>
+        <a href="{% url 'all_trainee' %}">all_trainee</a>
+    </span>
+    <span>
+        <a href="{% url 'all_tracks' %}">all_tracks</a>
+    </span>
     <div>
         {% block content %}
             base Content

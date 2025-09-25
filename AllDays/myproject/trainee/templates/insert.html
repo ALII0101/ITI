@@ -15,7 +15,18 @@
     <label for="tremail">
         Email:</label>
     <input type="email" id="tremail" name="tremail" required>
+<br><br>
 
+<!-- <select name="trtrack" id="trtrack"></select> -->
+        <!-- <option value="Python"></option>
+        <option value="Java"></option>
+        <option value="C++"></option> -->
+        <select name="trtrack" id="trtrack">
+            <option value="">--- اختر المسار ---</option>
+            {% for track in tracks %}
+            <option value="{{ track.id }}">{{ track.name }}</option>
+            {% endfor %}
+        </select>
 <br><br>
 
     <label for="trphoto">upload image</label>

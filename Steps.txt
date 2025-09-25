@@ -49,4 +49,18 @@ python manage.py shell(to deal with class )
                         Track.objects.filter(id=1).update(name='PHP') --> to update row-name that his id =1 
 
 
-                        # pip install pillow -->to deal with image 
+pip install pillow -->to deal with image 
+
+#Manage-Adminstrator
+python manage.py createsuperuser
+                username:Ali
+                pass:2487220479
+
+                user:ashraf
+                pass:Alii2677
+
+
+------> if has any mistakes in python manage.py migrate
+                    delete migrations-file 
+                    and make it again
+                    it just reload (same-table &add any updates)

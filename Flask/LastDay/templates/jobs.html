@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Jobs{% endblock %}
+{% block content %}
+
+<h1>Jobs</h1>
+<p>Welcome to my jobs</p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Location</th>
+    </tr>
+    {% for job in jobs %}
+    <tr>
+        <td>{{ job.id }}</td >
+        <td>{{ job.title }}</td>
+        <td>{{ job.company }}</td>
+        <td>{{ job.location }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
